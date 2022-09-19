@@ -4,12 +4,21 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'pages/premier-league',
     pathMatch: 'full'
   },
+  
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    path: 'pages/serie-a',
+    loadChildren: () => import('./pages/serie-a/serie-a.module').then( m => m.SerieAPageModule)
+  },
+  {
+    path: 'pages/premier-league',
+    loadChildren: () => import('./pages/premier-league/premier-league.module').then( m => m.PremierLeaguePageModule)
+  },
+  {
+    path: 'pages/la-liga',
+    loadChildren: () => import('./pages/la-liga/la-liga.module').then( m => m.LaLigaPageModule)
   }
 ];
 
